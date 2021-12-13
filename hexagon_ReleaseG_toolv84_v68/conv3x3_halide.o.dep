@@ -1,2 +1,0 @@
-src/conv3x3_halide.S:
-hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o: src/conv3x3_halide.S

@@ -1,8 +1,0 @@
-src/print.c:
-/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/HAP_farf.h:
-/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/stddef/AEEStdDef.h:
-/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/HAP_debug.h:
-hexagon_ReleaseG_toolv84_v68/print.o: src/print.c
-hexagon_ReleaseG_toolv84_v68/print.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/HAP_farf.h
-hexagon_ReleaseG_toolv84_v68/print.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/stddef/AEEStdDef.h
-hexagon_ReleaseG_toolv84_v68/print.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/HAP_debug.h

@@ -1,4 +1,0 @@
-src/conv3x3_per4row.c:
-src/conv3x3_per4row.h:
-hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o: src/conv3x3_per4row.c
-hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o: src/conv3x3_per4row.h

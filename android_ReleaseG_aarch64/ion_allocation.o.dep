@@ -1,4 +1,0 @@
-src/ion_allocation.c:
-src/ion_allocation.h:
-android_ReleaseG_aarch64/ion_allocation.o: src/ion_allocation.c
-android_ReleaseG_aarch64/ion_allocation.o: src/ion_allocation.h
