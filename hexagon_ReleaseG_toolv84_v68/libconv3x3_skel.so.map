@@ -1,0 +1,1305 @@
+# Linker from QuIC LLVM Hexagon Clang version Version 8.4.11
+# Linker based on LLVM version: 10.0
+# Notable linker command/script options:
+# CPU Architecture Version: hexagonv68
+# Target triple environment for the link: unknown
+# Maximum GP size: 0
+# Link type: Dynamic and Bsymbolic set
+# ABI Page Size: 0x1000
+# CommandLine : /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/hexagon-link --hash-style=sysv -march=hexagon -mcpu=hexagonv68 -shared -call_shared -G0 -o hexagon_ReleaseG_toolv84_v68/libconv3x3_skel.so /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/initS.o -L/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic -L/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0 -L/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68 -L/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib --no-threads -Bsymbolic --wrap=malloc --wrap=calloc --wrap=free --wrap=realloc --wrap=memalign -lc -Map=hexagon_ReleaseG_toolv84_v68/libconv3x3_skel.so.map -soname=libconv3x3_skel.so --start-group hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o hexagon_ReleaseG_toolv84_v68/print.o hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o --end-group --start-group -lgcc --end-group /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/finiS.o 
+# LinkStats Begin
+# ObjectFiles : 9
+# SharedObjects : 2
+# GroupTraversals : 6
+# NumOutputSections : 34
+# NumOrphans : 23
+# LinkStats End
+
+Linker Script and memory map
+LOAD /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/initS.o[v68]
+LOAD /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/libc.so[v68]
+START GROUP
+LOAD hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o[v68]
+LOAD hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o[v68]
+LOAD hexagon_ReleaseG_toolv84_v68/print.o[v68]
+LOAD hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o[v68]
+LOAD hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o[v68]
+LOAD hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o[v68]
+LOAD hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o[v68]
+END GROUP
+START GROUP
+LOAD /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/libgcc.so[v68]
+END GROUP
+LOAD /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/finiS.o[v68]
+Linker Plugin Information
+Linker Plugin Run Information
+
+# Output Section and Layout 
+
+.dynsym	0x94	0x1110 # Offset: 0x94, LMA: 0x94, Alignment: 0x4
+
+.dynstr	0x11a4	0x24d5 # Offset: 0x11a4, LMA: 0x11a4, Alignment: 0x1
+
+.hash	0x367c	0x890 # Offset: 0x367c, LMA: 0x367c, Alignment: 0x4
+*(.hash ) #Rule 12, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+
+.rela.dyn	0x3f0c	0x528 # Offset: 0x3f0c, LMA: 0x3f0c, Alignment: 0x4
+
+.rela.plt	0x4434	0x1a4 # Offset: 0x4434, LMA: 0x4434, Alignment: 0x4
+
+.init	0x45e0	0x80 # Offset: 0x45e0, LMA: 0x45e0, Alignment: 0x20
+.init	0x45e0	0x80	/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/initS.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x45e0		_init
+
+.plt	0x4660	0x260 # Offset: 0x4660, LMA: 0x4660, Alignment: 0x10
+*(.plt ) #Rule 15, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+
+.text	0x48c0	0xcd6c # Offset: 0x48c0, LMA: 0x48c0, Alignment: 0x20
+.text.__cxa_finalize_stub	0x48c0	0x30	/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/initS.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x48c0		__cxa_finalize_stub
+	0x48e8		__dso_handle
+.text	0x48f0	0x3ec	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,4
+	0x48f0		conv3x3_skel_handle_invoke
+PADDING_ALIGNMENT	0x4cdc	0x4	0x0
+.text	0x4ce0	0x560	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,16
+	0x4ce0		conv3x3_open
+	0x4d1c		conv3x3_close
+	0x4d38		conv3x3_sum
+	0x4d8c		_HAP_debug_v2
+	0x4ddc		conv3x3_intrinsicimp
+	0x500c		conv3x3_halideimp
+.text	0x5240	0x118	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,4
+	0x5240		halide_print
+	0x528c		_HAP_debug_v2
+	0x52d0		halide_error
+PADDING_ALIGNMENT	0x5358	0x8	0x0
+.text	0x5360	0x200	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,16
+	0x5360		conv3x3Per1Row
+.text	0x5560	0x2d4	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,16
+	0x5560		conv3x3Per2Row
+PADDING_ALIGNMENT	0x5834	0xc	0x0
+.text	0x5840	0x2f0	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,16
+	0x5840		conv3x3Per4Row
+PADDING_ALIGNMENT	0x5b30	0x10	0x0
+.text._ZN6Halide7Runtime8Internal14aligned_mallocEjj	0x5b40	0x9c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x5b40		Halide::Runtime::Internal::aligned_malloc(unsigned int, unsigned int)
+PADDING_ALIGNMENT	0x5bdc	0x4	0x0
+.text._ZN6Halide7Runtime8Internal12aligned_freeEPv	0x5be0	0x44	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x5be0		Halide::Runtime::Internal::aligned_free(void*)
+PADDING_ALIGNMENT	0x5c24	0x1c	0x0
+.text._ZN6Halide7Runtime8Internal24halide_allocator_cleanupEv	0x5c40	0x90	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x5c40		Halide::Runtime::Internal::halide_allocator_cleanup()
+PADDING_ALIGNMENT	0x5cd0	0x10	0x0
+.text.halide_default_malloc	0x5ce0	0x2ac	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x5ce0		halide_default_malloc
+PADDING_ALIGNMENT	0x5f8c	0x14	0x0
+.text.halide_default_free	0x5fa0	0x16c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x5fa0		halide_default_free
+PADDING_ALIGNMENT	0x610c	0x14	0x0
+.text.halide_set_custom_malloc	0x6120	0x34	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6120		halide_set_custom_malloc
+PADDING_ALIGNMENT	0x6154	0xc	0x0
+.text.halide_set_custom_free	0x6160	0x34	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6160		halide_set_custom_free
+PADDING_ALIGNMENT	0x6194	0xc	0x0
+.text.halide_malloc	0x61a0	0x3c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x61a0		halide_malloc
+PADDING_ALIGNMENT	0x61dc	0x4	0x0
+.text.halide_free	0x61e0	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x61e0		halide_free
+PADDING_ALIGNMENT	0x61e8	0x18	0x0
+.text.hexagon_default_malloc_tracing_alloc	0x6200	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6200		hexagon_default_malloc_tracing_alloc
+PADDING_ALIGNMENT	0x6204	0x1c	0x0
+.text.hexagon_default_malloc_tracing_failed_alloc	0x6220	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6220		hexagon_default_malloc_tracing_failed_alloc
+PADDING_ALIGNMENT	0x6224	0x1c	0x0
+.text.hexagon_default_malloc_tracing_log_request	0x6240	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6240		hexagon_default_malloc_tracing_log_request
+PADDING_ALIGNMENT	0x6244	0x1c	0x0
+.text.hexagon_default_malloc_tracing_free	0x6260	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6260		hexagon_default_malloc_tracing_free
+PADDING_ALIGNMENT	0x6264	0x1c	0x0
+.text.halide_set_custom_malloc_tracing_alloc	0x6280	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6280		halide_set_custom_malloc_tracing_alloc
+PADDING_ALIGNMENT	0x6298	0x8	0x0
+.text.halide_set_custom_malloc_tracing_failed_alloc	0x62a0	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x62a0		halide_set_custom_malloc_tracing_failed_alloc
+PADDING_ALIGNMENT	0x62b8	0x8	0x0
+.text.halide_set_custom_malloc_tracing_log_request	0x62c0	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x62c0		halide_set_custom_malloc_tracing_log_request
+PADDING_ALIGNMENT	0x62d8	0x8	0x0
+.text.halide_set_custom_malloc_tracing_free	0x62e0	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x62e0		halide_set_custom_malloc_tracing_free
+PADDING_ALIGNMENT	0x62f8	0x8	0x0
+.text.halide_hexagon_malloc_tracing_alloc	0x6300	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6300		halide_hexagon_malloc_tracing_alloc
+PADDING_ALIGNMENT	0x6318	0x8	0x0
+.text.halide_hexagon_malloc_tracing_failed_alloc	0x6320	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6320		halide_hexagon_malloc_tracing_failed_alloc
+PADDING_ALIGNMENT	0x6338	0x8	0x0
+.text.halide_hexagon_malloc_tracing_free	0x6340	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6340		halide_hexagon_malloc_tracing_free
+PADDING_ALIGNMENT	0x6358	0x8	0x0
+.text.halide_hexagon_malloc_tracing_log_request	0x6360	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6360		halide_hexagon_malloc_tracing_log_request
+PADDING_ALIGNMENT	0x6378	0x8	0x0
+.text.halide_thread_yield	0x6380	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6380		halide_thread_yield
+PADDING_ALIGNMENT	0x6384	0x1c	0x0
+.text.halide_default_do_task	0x63a0	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x63a0		halide_default_do_task
+PADDING_ALIGNMENT	0x63ac	0x14	0x0
+.text.halide_default_do_loop_task	0x63c0	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x63c0		halide_default_do_loop_task
+PADDING_ALIGNMENT	0x63d4	0xc	0x0
+.text.halide_default_do_par_for	0x63e0	0xa8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x63e0		halide_default_do_par_for
+PADDING_ALIGNMENT	0x6488	0x18	0x0
+.text.halide_mutex_lock	0x64a0	0x110	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x64a0		halide_mutex_lock
+PADDING_ALIGNMENT	0x65b0	0x10	0x0
+.text._ZN6Halide7Runtime8Internal27enqueue_work_already_lockedEiPNS1_4workES3_	0x65c0	0x510	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x65c0		Halide::Runtime::Internal::enqueue_work_already_locked(int, Halide::Runtime::Internal::work*, Halide::Runtime::Internal::work*)
+PADDING_ALIGNMENT	0x6ad0	0x10	0x0
+.text._ZN6Halide7Runtime8Internal28worker_thread_already_lockedEPNS1_4workE	0x6ae0	0x6bc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x6ae0		Halide::Runtime::Internal::worker_thread_already_locked(Halide::Runtime::Internal::work*)
+PADDING_ALIGNMENT	0x719c	0x4	0x0
+.text.halide_mutex_unlock	0x71a0	0x7c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x71a0		halide_mutex_unlock
+PADDING_ALIGNMENT	0x721c	0x4	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization28parking_control_before_sleepEPv	0x7220	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7220		Halide::Runtime::Internal::Synchronization::parking_control_before_sleep(void*)
+PADDING_ALIGNMENT	0x7224	0x1c	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization32parking_control_requeue_callbackEPvRKNS2_15validate_actionEbb	0x7240	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7240		Halide::Runtime::Internal::Synchronization::parking_control_requeue_callback(void*, Halide::Runtime::Internal::Synchronization::validate_action const&, bool, bool)
+PADDING_ALIGNMENT	0x7244	0x1c	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization30mutex_parking_control_validateEPvRNS2_15validate_actionE	0x7260	0x10	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7260		Halide::Runtime::Internal::Synchronization::mutex_parking_control_validate(void*, Halide::Runtime::Internal::Synchronization::validate_action&)
+PADDING_ALIGNMENT	0x7270	0x10	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization28mutex_parking_control_unparkEPvib	0x7280	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7280		Halide::Runtime::Internal::Synchronization::mutex_parking_control_unpark(void*, int, bool)
+PADDING_ALIGNMENT	0x7298	0x8	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization10unpark_oneEjRNS2_15parking_controlE	0x72a0	0x138	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x72a0		Halide::Runtime::Internal::Synchronization::unpark_one(unsigned int, Halide::Runtime::Internal::Synchronization::parking_control&)
+PADDING_ALIGNMENT	0x73d8	0x8	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization11lock_bucketEj	0x73e0	0x54	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x73e0		Halide::Runtime::Internal::Synchronization::lock_bucket(unsigned int)
+PADDING_ALIGNMENT	0x7434	0xc	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization9word_lock11unlock_fullEv	0x7440	0x128	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7440		Halide::Runtime::Internal::Synchronization::word_lock::unlock_full()
+PADDING_ALIGNMENT	0x7568	0x18	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization9word_lock9lock_fullEv	0x7580	0x140	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7580		Halide::Runtime::Internal::Synchronization::word_lock::lock_full()
+.text.halide_cond_broadcast	0x76c0	0x60	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x76c0		halide_cond_broadcast
+.text.halide_default_semaphore_try_acquire	0x7720	0x4c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7720		halide_default_semaphore_try_acquire
+PADDING_ALIGNMENT	0x776c	0x14	0x0
+.text.halide_cond_wait	0x7780	0x170	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7780		halide_cond_wait
+PADDING_ALIGNMENT	0x78f0	0x10	0x0
+.text.halide_do_loop_task	0x7900	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7900		halide_do_loop_task
+PADDING_ALIGNMENT	0x7918	0x8	0x0
+.text.halide_do_task	0x7920	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7920		halide_do_task
+PADDING_ALIGNMENT	0x7938	0x8	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization29wait_parking_control_validateEPvRNS2_15validate_actionE	0x7940	0x40	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7940		Halide::Runtime::Internal::Synchronization::wait_parking_control_validate(void*, Halide::Runtime::Internal::Synchronization::validate_action&)
+.text._ZN6Halide7Runtime8Internal15Synchronization33wait_parking_control_before_sleepEPv	0x7980	0x80	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7980		Halide::Runtime::Internal::Synchronization::wait_parking_control_before_sleep(void*)
+.text._ZN6Halide7Runtime8Internal15Synchronization27wait_parking_control_unparkEPvib	0x7a00	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7a00		Halide::Runtime::Internal::Synchronization::wait_parking_control_unpark(void*, int, bool)
+PADDING_ALIGNMENT	0x7a14	0xc	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization4parkEjRNS2_15parking_controlE	0x7a20	0x16c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7a20		Halide::Runtime::Internal::Synchronization::park(unsigned int, Halide::Runtime::Internal::Synchronization::parking_control&)
+PADDING_ALIGNMENT	0x7b8c	0x14	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization22parking_control_unparkEPvib	0x7ba0	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7ba0		Halide::Runtime::Internal::Synchronization::parking_control_unpark(void*, int, bool)
+PADDING_ALIGNMENT	0x7ba4	0x1c	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization34broadcast_parking_control_validateEPvRNS2_15validate_actionE	0x7bc0	0x64	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7bc0		Halide::Runtime::Internal::Synchronization::broadcast_parking_control_validate(void*, Halide::Runtime::Internal::Synchronization::validate_action&)
+PADDING_ALIGNMENT	0x7c24	0x1c	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization42broadcast_parking_control_requeue_callbackEPvRKNS2_15validate_actionEbb	0x7c40	0x24	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7c40		Halide::Runtime::Internal::Synchronization::broadcast_parking_control_requeue_callback(void*, Halide::Runtime::Internal::Synchronization::validate_action const&, bool, bool)
+PADDING_ALIGNMENT	0x7c64	0x1c	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization14unpark_requeueEjjRNS2_15parking_controlEj	0x7c80	0x208	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7c80		Halide::Runtime::Internal::Synchronization::unpark_requeue(unsigned int, unsigned int, Halide::Runtime::Internal::Synchronization::parking_control&, unsigned int)
+PADDING_ALIGNMENT	0x7e88	0x18	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization16lock_bucket_pairEjj	0x7ea0	0x138	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7ea0		Halide::Runtime::Internal::Synchronization::lock_bucket_pair(unsigned int, unsigned int)
+PADDING_ALIGNMENT	0x7fd8	0x8	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization18unlock_bucket_pairERNS2_11bucket_pairE	0x7fe0	0xe8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x7fe0		Halide::Runtime::Internal::Synchronization::unlock_bucket_pair(Halide::Runtime::Internal::Synchronization::bucket_pair&)
+PADDING_ALIGNMENT	0x80c8	0x18	0x0
+.text._ZN6Halide7Runtime8Internal27default_desired_num_threadsEv	0x80e0	0x4c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x80e0		Halide::Runtime::Internal::default_desired_num_threads()
+PADDING_ALIGNMENT	0x812c	0x14	0x0
+.text._ZN6Halide7Runtime8Internal17clamp_num_threadsEi	0x8140	0x1c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8140		Halide::Runtime::Internal::clamp_num_threads(int)
+PADDING_ALIGNMENT	0x815c	0x4	0x0
+.text._ZN6Halide7Runtime8Internal13worker_threadEPv	0x8160	0x40	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8160		Halide::Runtime::Internal::worker_thread(void*)
+.text.halide_spawn_thread	0x81a0	0x9c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x81a0		halide_spawn_thread
+PADDING_ALIGNMENT	0x823c	0x4	0x0
+.text.halide_get_default_thread_priority	0x8240	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8240		halide_get_default_thread_priority
+PADDING_ALIGNMENT	0x8254	0xc	0x0
+.text._ZN12_GLOBAL__N_119spawn_thread_helperEPv	0x8260	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8260		(anonymous namespace)::spawn_thread_helper(void*)
+PADDING_ALIGNMENT	0x8268	0x18	0x0
+.text.halide_host_cpu_count	0x8280	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8280		halide_host_cpu_count
+PADDING_ALIGNMENT	0x8284	0x1c	0x0
+.text.halide_default_do_parallel_tasks	0x82a0	0x130	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x82a0		halide_default_do_parallel_tasks
+PADDING_ALIGNMENT	0x83d0	0x10	0x0
+.text.halide_default_semaphore_init	0x83e0	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x83e0		halide_default_semaphore_init
+PADDING_ALIGNMENT	0x83ec	0x14	0x0
+.text.halide_default_semaphore_release	0x8400	0x74	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8400		halide_default_semaphore_release
+PADDING_ALIGNMENT	0x8474	0xc	0x0
+.text.halide_thread_pool_cleanup	0x8480	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8480		halide_thread_pool_cleanup
+PADDING_ALIGNMENT	0x8488	0x18	0x0
+.text.halide_shutdown_thread_pool	0x84a0	0xec	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x84a0		halide_shutdown_thread_pool
+PADDING_ALIGNMENT	0x858c	0x14	0x0
+.text.halide_join_thread	0x85a0	0x34	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x85a0		halide_join_thread
+PADDING_ALIGNMENT	0x85d4	0xc	0x0
+.text.halide_set_default_thread_priority	0x85e0	0x30	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x85e0		halide_set_default_thread_priority
+PADDING_ALIGNMENT	0x8610	0x10	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization24parking_control_validateEPvRNS2_15validate_actionE	0x8620	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8620		Halide::Runtime::Internal::Synchronization::parking_control_validate(void*, Halide::Runtime::Internal::Synchronization::validate_action&)
+PADDING_ALIGNMENT	0x8624	0x1c	0x0
+.text._ZN6Halide7Runtime8Internal15Synchronization29signal_parking_control_unparkEPvib	0x8640	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8640		Halide::Runtime::Internal::Synchronization::signal_parking_control_unpark(void*, int, bool)
+PADDING_ALIGNMENT	0x8654	0xc	0x0
+.text.halide_cond_signal	0x8660	0x5c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8660		halide_cond_signal
+PADDING_ALIGNMENT	0x86bc	0x4	0x0
+.text.halide_mutex_array_create	0x86c0	0x6c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x86c0		halide_mutex_array_create
+PADDING_ALIGNMENT	0x872c	0x14	0x0
+.text.halide_mutex_array_destroy	0x8740	0x24	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8740		halide_mutex_array_destroy
+PADDING_ALIGNMENT	0x8764	0x1c	0x0
+.text.halide_mutex_array_lock	0x8780	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8780		halide_mutex_array_lock
+PADDING_ALIGNMENT	0x8798	0x8	0x0
+.text.halide_mutex_array_unlock	0x87a0	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x87a0		halide_mutex_array_unlock
+PADDING_ALIGNMENT	0x87b8	0x8	0x0
+.text.halide_set_num_threads	0x87c0	0x94	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x87c0		halide_set_num_threads
+PADDING_ALIGNMENT	0x8854	0xc	0x0
+.text.halide_set_custom_do_task	0x8860	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8860		halide_set_custom_do_task
+PADDING_ALIGNMENT	0x8878	0x8	0x0
+.text.halide_set_custom_do_loop_task	0x8880	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8880		halide_set_custom_do_loop_task
+PADDING_ALIGNMENT	0x8898	0x8	0x0
+.text.halide_set_custom_do_par_for	0x88a0	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x88a0		halide_set_custom_do_par_for
+PADDING_ALIGNMENT	0x88b8	0x8	0x0
+.text.halide_set_custom_parallel_runtime	0x88c0	0x60	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x88c0		halide_set_custom_parallel_runtime
+.text.halide_do_par_for	0x8920	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8920		halide_do_par_for
+PADDING_ALIGNMENT	0x8938	0x8	0x0
+.text.halide_do_parallel_tasks	0x8940	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8940		halide_do_parallel_tasks
+PADDING_ALIGNMENT	0x8958	0x8	0x0
+.text.halide_semaphore_init	0x8960	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8960		halide_semaphore_init
+PADDING_ALIGNMENT	0x8978	0x8	0x0
+.text.halide_semaphore_release	0x8980	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8980		halide_semaphore_release
+PADDING_ALIGNMENT	0x8998	0x8	0x0
+.text.halide_semaphore_try_acquire	0x89a0	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x89a0		halide_semaphore_try_acquire
+PADDING_ALIGNMENT	0x89b8	0x8	0x0
+.text.halide_set_gpu_device	0x89c0	0x24	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x89c0		halide_set_gpu_device
+PADDING_ALIGNMENT	0x89e4	0x1c	0x0
+.text.halide_get_gpu_device	0x8a00	0xc8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8a00		halide_get_gpu_device
+PADDING_ALIGNMENT	0x8ac8	0x18	0x0
+.text.halide_string_to_string	0x8ae0	0x38	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8ae0		halide_string_to_string
+PADDING_ALIGNMENT	0x8b18	0x8	0x0
+.text.halide_uint64_to_string	0x8b20	0xdc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8b20		halide_uint64_to_string
+PADDING_ALIGNMENT	0x8bfc	0x4	0x0
+.text.halide_int64_to_string	0x8c00	0x28	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8c00		halide_int64_to_string
+PADDING_ALIGNMENT	0x8c28	0x18	0x0
+.text.halide_double_to_string	0x8c40	0x594	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x8c40		halide_double_to_string
+PADDING_ALIGNMENT	0x91d4	0xc	0x0
+.text.halide_pointer_to_string	0x91e0	0x15c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x91e0		halide_pointer_to_string
+PADDING_ALIGNMENT	0x933c	0x4	0x0
+.text.halide_type_to_string	0x9340	0xac	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x9340		halide_type_to_string
+PADDING_ALIGNMENT	0x93ec	0x14	0x0
+.text.halide_buffer_to_string	0x9400	0x1c4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x9400		halide_buffer_to_string
+PADDING_ALIGNMENT	0x95c4	0x1c	0x0
+.text.halide_malloc_alignment	0x95e0	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x95e0		halide_malloc_alignment
+PADDING_ALIGNMENT	0x95e8	0x18	0x0
+.text.halide_reuse_device_allocations	0x9600	0x8c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x9600		halide_reuse_device_allocations
+PADDING_ALIGNMENT	0x968c	0x14	0x0
+.text.halide_can_reuse_device_allocations	0x96a0	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x96a0		halide_can_reuse_device_allocations
+PADDING_ALIGNMENT	0x96b4	0xc	0x0
+.text.halide_register_device_allocation_pool	0x96c0	0x50	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x96c0		halide_register_device_allocation_pool
+PADDING_ALIGNMENT	0x9710	0x10	0x0
+.text._ZN6Halide7Runtime8Internal18copy_memory_helperERKNS1_11device_copyEixx	0x9720	0x118	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x9720		Halide::Runtime::Internal::copy_memory_helper(Halide::Runtime::Internal::device_copy const&, int, long long, long long)
+PADDING_ALIGNMENT	0x9838	0x8	0x0
+.text._ZN6Halide7Runtime8Internal11copy_memoryERKNS1_11device_copyEPv	0x9840	0x2c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x9840		Halide::Runtime::Internal::copy_memory(Halide::Runtime::Internal::device_copy const&, void*)
+PADDING_ALIGNMENT	0x986c	0x14	0x0
+.text._ZN6Halide7Runtime8Internal16make_buffer_copyEPK15halide_buffer_tbS4_b	0x9880	0x594	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x9880		Halide::Runtime::Internal::make_buffer_copy(halide_buffer_t const*, bool, halide_buffer_t const*, bool)
+PADDING_ALIGNMENT	0x9e14	0xc	0x0
+.text._ZN6Halide7Runtime8Internal27copy_to_host_already_lockedEPvP15halide_buffer_t	0x9e20	0x88	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x9e20		Halide::Runtime::Internal::copy_to_host_already_locked(void*, halide_buffer_t*)
+PADDING_ALIGNMENT	0x9ea8	0x18	0x0
+.text.halide_device_release	0x9ec0	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x9ec0		halide_device_release
+PADDING_ALIGNMENT	0x9ecc	0x14	0x0
+.text.halide_copy_to_host	0x9ee0	0x11c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x9ee0		halide_copy_to_host
+PADDING_ALIGNMENT	0x9ffc	0x4	0x0
+.text.copy_to_device_already_locked	0xa000	0x194	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xa000		copy_to_device_already_locked
+PADDING_ALIGNMENT	0xa194	0xc	0x0
+.text.halide_device_malloc	0xa1a0	0x110	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xa1a0		halide_device_malloc
+PADDING_ALIGNMENT	0xa2b0	0x10	0x0
+.text.halide_copy_to_device	0xa2c0	0x54	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xa2c0		halide_copy_to_device
+PADDING_ALIGNMENT	0xa314	0xc	0x0
+.text.halide_device_sync	0xa320	0xdc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xa320		halide_device_sync
+PADDING_ALIGNMENT	0xa3fc	0x4	0x0
+.text.halide_device_free	0xa400	0x130	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xa400		halide_device_free
+PADDING_ALIGNMENT	0xa530	0x10	0x0
+.text.halide_device_free_as_destructor	0xa540	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xa540		halide_device_free_as_destructor
+PADDING_ALIGNMENT	0xa548	0x18	0x0
+.text.halide_device_and_host_malloc	0xa560	0x134	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xa560		halide_device_and_host_malloc
+PADDING_ALIGNMENT	0xa694	0xc	0x0
+.text.halide_device_and_host_free	0xa6a0	0x150	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xa6a0		halide_device_and_host_free
+PADDING_ALIGNMENT	0xa7f0	0x10	0x0
+.text.halide_default_device_and_host_malloc	0xa800	0x1c4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xa800		halide_default_device_and_host_malloc
+PADDING_ALIGNMENT	0xa9c4	0x1c	0x0
+.text.halide_default_device_and_host_free	0xa9e0	0x13c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xa9e0		halide_default_device_and_host_free
+PADDING_ALIGNMENT	0xab1c	0x4	0x0
+.text.halide_device_wrap_native	0xab20	0x11c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xab20		halide_device_wrap_native
+PADDING_ALIGNMENT	0xac3c	0x4	0x0
+.text.halide_device_detach_native	0xac40	0x124	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xac40		halide_device_detach_native
+PADDING_ALIGNMENT	0xad64	0x1c	0x0
+.text.halide_default_device_wrap_native	0xad80	0xc4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xad80		halide_default_device_wrap_native
+PADDING_ALIGNMENT	0xae44	0x1c	0x0
+.text.halide_default_device_detach_native	0xae60	0xe8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xae60		halide_default_device_detach_native
+PADDING_ALIGNMENT	0xaf48	0x18	0x0
+.text.halide_device_and_host_free_as_destructor	0xaf60	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xaf60		halide_device_and_host_free_as_destructor
+PADDING_ALIGNMENT	0xaf68	0x18	0x0
+.text.halide_device_host_nop_free	0xaf80	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xaf80		halide_device_host_nop_free
+PADDING_ALIGNMENT	0xaf84	0x1c	0x0
+.text.halide_default_buffer_copy	0xafa0	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xafa0		halide_default_buffer_copy
+PADDING_ALIGNMENT	0xafa8	0x18	0x0
+.text.halide_buffer_copy_already_locked	0xafc0	0x2fc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xafc0		halide_buffer_copy_already_locked
+PADDING_ALIGNMENT	0xb2bc	0x4	0x0
+.text.halide_buffer_copy	0xb2c0	0xbc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb2c0		halide_buffer_copy
+PADDING_ALIGNMENT	0xb37c	0x4	0x0
+.text.halide_default_device_crop	0xb380	0x1c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb380		halide_default_device_crop
+PADDING_ALIGNMENT	0xb39c	0x4	0x0
+.text.halide_default_device_slice	0xb3a0	0x1c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb3a0		halide_default_device_slice
+PADDING_ALIGNMENT	0xb3bc	0x4	0x0
+.text.halide_device_crop	0xb3c0	0xdc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb3c0		halide_device_crop
+PADDING_ALIGNMENT	0xb49c	0x4	0x0
+.text.halide_device_slice	0xb4a0	0xdc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb4a0		halide_device_slice
+PADDING_ALIGNMENT	0xb57c	0x4	0x0
+.text.halide_default_device_release_crop	0xb580	0x34	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb580		halide_default_device_release_crop
+PADDING_ALIGNMENT	0xb5b4	0xc	0x0
+.text.halide_device_release_crop	0xb5c0	0x88	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb5c0		halide_device_release_crop
+PADDING_ALIGNMENT	0xb648	0x18	0x0
+.text.halide_float16_bits_to_float	0xb660	0x8c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb660		halide_float16_bits_to_float
+PADDING_ALIGNMENT	0xb6ec	0x14	0x0
+.text.halide_float16_bits_to_double	0xb700	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb700		halide_float16_bits_to_double
+PADDING_ALIGNMENT	0xb714	0xc	0x0
+.text.halide_error_check_fault_and_return	0xb720	0x3c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb720		halide_error_check_fault_and_return
+PADDING_ALIGNMENT	0xb75c	0x4	0x0
+.text.halide_error_bounds_inference_call_failed	0xb760	0x10c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb760		halide_error_bounds_inference_call_failed
+PADDING_ALIGNMENT	0xb86c	0x14	0x0
+.text.halide_error_extern_stage_failed	0xb880	0x10c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb880		halide_error_extern_stage_failed
+PADDING_ALIGNMENT	0xb98c	0x14	0x0
+.text.halide_error_explicit_bounds_too_small	0xb9a0	0x1fc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xb9a0		halide_error_explicit_bounds_too_small
+PADDING_ALIGNMENT	0xbb9c	0x4	0x0
+.text.halide_error_bad_type	0xbba0	0x154	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xbba0		halide_error_bad_type
+PADDING_ALIGNMENT	0xbcf4	0xc	0x0
+.text.halide_error_bad_dimensions	0xbd00	0x140	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xbd00		halide_error_bad_dimensions
+.text.halide_error_access_out_of_bounds	0xbe40	0x2a8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xbe40		halide_error_access_out_of_bounds
+PADDING_ALIGNMENT	0xc0e8	0x18	0x0
+.text.halide_error_buffer_allocation_too_large	0xc100	0x158	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xc100		halide_error_buffer_allocation_too_large
+PADDING_ALIGNMENT	0xc258	0x8	0x0
+.text.halide_error_buffer_extents_negative	0xc260	0x154	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xc260		halide_error_buffer_extents_negative
+PADDING_ALIGNMENT	0xc3b4	0xc	0x0
+.text.halide_error_buffer_extents_too_large	0xc3c0	0x158	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xc3c0		halide_error_buffer_extents_too_large
+PADDING_ALIGNMENT	0xc518	0x8	0x0
+.text.halide_error_constraints_make_required_region_smaller	0xc520	0x228	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xc520		halide_error_constraints_make_required_region_smaller
+PADDING_ALIGNMENT	0xc748	0x18	0x0
+.text.halide_error_constraint_violated	0xc760	0x1a4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xc760		halide_error_constraint_violated
+PADDING_ALIGNMENT	0xc904	0x1c	0x0
+.text.halide_error_param_too_small_i64	0xc920	0x158	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xc920		halide_error_param_too_small_i64
+PADDING_ALIGNMENT	0xca78	0x8	0x0
+.text.halide_error_param_too_small_u64	0xca80	0x158	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xca80		halide_error_param_too_small_u64
+PADDING_ALIGNMENT	0xcbd8	0x8	0x0
+.text.halide_error_param_too_small_f64	0xcbe0	0x158	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xcbe0		halide_error_param_too_small_f64
+PADDING_ALIGNMENT	0xcd38	0x8	0x0
+.text.halide_error_param_too_large_i64	0xcd40	0x158	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xcd40		halide_error_param_too_large_i64
+PADDING_ALIGNMENT	0xce98	0x8	0x0
+.text.halide_error_param_too_large_u64	0xcea0	0x158	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xcea0		halide_error_param_too_large_u64
+PADDING_ALIGNMENT	0xcff8	0x8	0x0
+.text.halide_error_param_too_large_f64	0xd000	0x158	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xd000		halide_error_param_too_large_f64
+PADDING_ALIGNMENT	0xd158	0x8	0x0
+.text.halide_error_out_of_memory	0xd160	0x28	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xd160		halide_error_out_of_memory
+PADDING_ALIGNMENT	0xd188	0x18	0x0
+.text.halide_error_vtcm_out_of_memory	0xd1a0	0x28	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xd1a0		halide_error_vtcm_out_of_memory
+PADDING_ALIGNMENT	0xd1c8	0x18	0x0
+.text.halide_error_locked_cache_out_of_memory	0xd1e0	0x28	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xd1e0		halide_error_locked_cache_out_of_memory
+PADDING_ALIGNMENT	0xd208	0x18	0x0
+.text.halide_error_gpu_shared_out_of_memory	0xd220	0x28	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xd220		halide_error_gpu_shared_out_of_memory
+PADDING_ALIGNMENT	0xd248	0x18	0x0
+.text.halide_error_buffer_argument_is_null	0xd260	0x100	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xd260		halide_error_buffer_argument_is_null
+.text.halide_error_debug_to_file_failed	0xd360	0x160	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xd360		halide_error_debug_to_file_failed
+.text.halide_error_unaligned_host_ptr	0xd4c0	0x134	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xd4c0		halide_error_unaligned_host_ptr
+PADDING_ALIGNMENT	0xd5f4	0xc	0x0
+.text.halide_error_device_dirty_with_no_device_support	0xd600	0x118	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xd600		halide_error_device_dirty_with_no_device_support
+PADDING_ALIGNMENT	0xd718	0x8	0x0
+.text.halide_error_host_is_null	0xd720	0x100	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xd720		halide_error_host_is_null
+.text.halide_error_bad_fold	0xd820	0x194	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xd820		halide_error_bad_fold
+PADDING_ALIGNMENT	0xd9b4	0xc	0x0
+.text.halide_error_bad_extern_fold	0xd9c0	0x3cc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xd9c0		halide_error_bad_extern_fold
+PADDING_ALIGNMENT	0xdd8c	0x14	0x0
+.text.halide_error_fold_factor_too_small	0xdda0	0x1e4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xdda0		halide_error_fold_factor_too_small
+PADDING_ALIGNMENT	0xdf84	0x1c	0x0
+.text.halide_error_requirement_failed	0xdfa0	0x140	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xdfa0		halide_error_requirement_failed
+.text.halide_error_specialize_fail	0xe0e0	0xf4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe0e0		halide_error_specialize_fail
+PADDING_ALIGNMENT	0xe1d4	0xc	0x0
+.text.halide_error_no_device_interface	0xe1e0	0xb0	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe1e0		halide_error_no_device_interface
+PADDING_ALIGNMENT	0xe290	0x10	0x0
+.text.halide_error_device_interface_no_device	0xe2a0	0xb0	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe2a0		halide_error_device_interface_no_device
+PADDING_ALIGNMENT	0xe350	0x10	0x0
+.text.halide_error_host_and_device_dirty	0xe360	0xb0	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe360		halide_error_host_and_device_dirty
+PADDING_ALIGNMENT	0xe410	0x10	0x0
+.text.halide_error_buffer_is_null	0xe420	0x100	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe420		halide_error_buffer_is_null
+.text.halide_msan_annotate_memory_is_initialized	0xe520	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe520		halide_msan_annotate_memory_is_initialized
+PADDING_ALIGNMENT	0xe524	0x1c	0x0
+.text.halide_msan_check_memory_is_initialized	0xe540	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe540		halide_msan_check_memory_is_initialized
+PADDING_ALIGNMENT	0xe544	0x1c	0x0
+.text.halide_msan_check_buffer_is_initialized	0xe560	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe560		halide_msan_check_buffer_is_initialized
+PADDING_ALIGNMENT	0xe564	0x1c	0x0
+.text.halide_msan_annotate_buffer_is_initialized	0xe580	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe580		halide_msan_annotate_buffer_is_initialized
+PADDING_ALIGNMENT	0xe584	0x1c	0x0
+.text.halide_msan_annotate_buffer_is_initialized_as_destructor	0xe5a0	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe5a0		halide_msan_annotate_buffer_is_initialized_as_destructor
+PADDING_ALIGNMENT	0xe5a4	0x1c	0x0
+.text.halide_qurt_hvx_lock	0xe5c0	0xbc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe5c0		halide_qurt_hvx_lock
+PADDING_ALIGNMENT	0xe67c	0x4	0x0
+.text.halide_qurt_hvx_unlock	0xe680	0xbc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe680		halide_qurt_hvx_unlock
+PADDING_ALIGNMENT	0xe73c	0x4	0x0
+.text.halide_qurt_hvx_unlock_as_destructor	0xe740	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe740		halide_qurt_hvx_unlock_as_destructor
+PADDING_ALIGNMENT	0xe748	0x18	0x0
+.text.halide_vtcm_malloc	0xe760	0x130	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe760		halide_vtcm_malloc
+PADDING_ALIGNMENT	0xe890	0x10	0x0
+.text.halide_vtcm_free	0xe8a0	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe8a0		halide_vtcm_free
+PADDING_ALIGNMENT	0xe8ac	0x14	0x0
+.text.halide_default_can_use_target_features	0xe8c0	0x140	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xe8c0		halide_default_can_use_target_features
+.text.halide_set_custom_can_use_target_features	0xea00	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xea00		halide_set_custom_can_use_target_features
+PADDING_ALIGNMENT	0xea18	0x8	0x0
+.text.halide_can_use_target_features	0xea20	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xea20		halide_can_use_target_features
+PADDING_ALIGNMENT	0xea38	0x8	0x0
+.text._ZN6Halide7Runtime8Internal23halide_get_cpu_featuresEv	0xea40	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xea40		Halide::Runtime::Internal::halide_get_cpu_features()
+PADDING_ALIGNMENT	0xea58	0x8	0x0
+.text.halide_use_jit_module	0xea60	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xea60		halide_use_jit_module
+PADDING_ALIGNMENT	0xea64	0x1c	0x0
+.text.halide_release_jit_module	0xea80	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xea80		halide_release_jit_module
+PADDING_ALIGNMENT	0xea84	0x1c	0x0
+.text.conv3x3_halide	0xeaa0	0x149c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xeaa0		conv3x3_halide
+PADDING_ALIGNMENT	0xff3c	0x4	0x0
+.text.conv3x3_halide.par_for.output.s0.y.yo	0xff40	0x16a8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0xff40		conv3x3_halide.par_for.output.s0.y.yo
+PADDING_ALIGNMENT	0x115e8	0x18	0x0
+.text.conv3x3_halide_argv	0x11600	0x10	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x11600		conv3x3_halide_argv
+PADDING_ALIGNMENT	0x11610	0x10	0x0
+.text.conv3x3_halide_metadata	0x11620	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x11620		conv3x3_halide_metadata
+
+.fini.halide	0x11640	0x2c # Offset: 0x11640, LMA: 0x11640, Alignment: 0x20
+*(.fini.halide ) #Rule 11, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+.fini.halide	0x11640	0x2c	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x11640		run_dtors
+
+.fini	0x11680	0x44 # Offset: 0x11680, LMA: 0x11680, Alignment: 0x20
+.fini	0x11680	0x44	/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/finiS.o	#SHT_PROGBITS,SHF_ALLOC|SHF_EXECINSTR,32
+	0x11680		_fini
+
+.rodata	0x11700	0x1f71 # Offset: 0x11700, LMA: 0x11700, Alignment: 0x80
+.rodata	0x11700	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_ALLOC,4
+PADDING_ALIGNMENT	0x11714	0x4	0x0
+.rodata.methodStringsArrays	0x11718	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_ALLOC,8
+	0x11718		methodStringsArrays
+PADDING_ALIGNMENT	0x11722	0x6	0x0
+.rodata.methodStrings	0x11728	0x28	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_ALLOC,8
+	0x11728		methodStrings
+.rodata.strings	0x11750	0x4f	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_ALLOC,8
+	0x11750		strings
+PADDING_ALIGNMENT	0x1179f	0x1	0x0
+.rodata.types	0x117a0	0x10	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_ALLOC,8
+	0x117a0		types
+.rodata.KernelSize	0x117b0	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_ALLOC,4
+	0x117b0		KernelSize
+.rodata.KernelLen	0x117b4	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_ALLOC,4
+	0x117b4		KernelLen
+.rodata.Width	0x117b8	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_ALLOC,4
+	0x117b8		Width
+.rodata.Height	0x117bc	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_ALLOC,4
+	0x117bc		Height
+.rodata.Stride	0x117c0	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_ALLOC,4
+	0x117c0		Stride
+.rodata.str1.1	0x117c4	0x1d	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_ALLOC|SHF_MERGE|SHF_STRINGS,1
+	0x117c4		.L.str
+.rodata.str1.1	0x117e1	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_ALLOC|SHF_MERGE|SHF_STRINGS,1
+	0x117e1		.L__func__.conv3x3_open
+.rodata.str1.1	0x117ee	0xe	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_ALLOC|SHF_MERGE|SHF_STRINGS,1
+	0x117ee		.L.str.1
+.rodata.str1.1	0x117fc	0x36	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_ALLOC|SHF_MERGE|SHF_STRINGS,1
+	0x117fc		.L.str.2
+.rodata.str1.1	0x11832	0x12	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_ALLOC|SHF_MERGE|SHF_STRINGS,1
+	0x11832		.L.str.3
+.rodata.str1.1	0x11844	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_ALLOC|SHF_MERGE|SHF_STRINGS,1
+	0x11844		.L.str.4
+.rodata.str1.1	0x11850	0x8	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,SHF_ALLOC|SHF_MERGE|SHF_STRINGS,1
+	0x11850		.L.str
+.rodata.str1.1	0x11858	0x3	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,SHF_ALLOC|SHF_MERGE|SHF_STRINGS,1
+	0x11858		.L.str.1
+.rodata.str1.1	0x1185b	0x11	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,SHF_ALLOC|SHF_MERGE|SHF_STRINGS,1
+	0x1185b		.L.str.2
+.rodata.conv3x3_halide	0x1186c	0xb0	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC,4
+PADDING_ALIGNMENT	0x1191c	0x64	0x0
+.rodata	0x11980	0x94f	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC,128
+PADDING_ALIGNMENT	0x122cf	0x1	0x0
+.rodata.str1.8	0x122d0	0x13a1	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_MERGE|SHF_STRINGS,8
+	0x122d0		.L.str
+	0x12300		.L.str.9
+	0x12390		.L.str.6
+	0x12418		.L.str.7
+	0x124e0		.L.str.3
+	0x125f0		.L.str.1
+	0x12600		.L.str.2
+	0x12610		.L.str.4
+	0x12638		.L.str.12
+	0x12648		.L.str.13
+	0x12650		.L.str.1.14
+	0x12658		.L.str.2.15
+	0x12660		.L.str.3.16
+	0x12668		.L.str.4.17
+	0x12678		.L.str.5
+	0x12688		.L.str.6.18
+	0x12698		.L.str.7.19
+	0x126a8		.L.str.8
+	0x126b0		.L.str.10
+	0x126b8		.L.str.11
+	0x126c0		.L.str.12.21
+	0x126d8		.L.str.17
+	0x12708		.L.str.18
+	0x12710		.L.str.19
+	0x12718		.L.str.20
+	0x12720		.L.str.22
+	0x12728		.L.str.23
+	0x12730		.L.str.6.23
+	0x12748		.L.str.7.24
+	0x12760		.L.str.9.25
+	0x127a0		.L.str.17.26
+	0x127b8		.L.str.20.27
+	0x127f8		.L.str.16.28
+	0x12810		.L.str.21.29
+	0x12828		.L.str.22.30
+	0x128b0		.L.str.23.31
+	0x128d0		.L.str.25
+	0x12918		.L.str.26
+	0x12948		.L.str.27
+	0x12968		.L.str.28
+	0x129f0		.L.str.29
+	0x12a18		.L.str.30
+	0x12a40		.L.str.31
+	0x12a60		.L.str.32
+	0x12aa0		.L.str.33
+	0x12ac0		.L.str.34
+	0x12b48		.L.str.35
+	0x12b70		.L.str.36
+	0x12b98		.L.str.42
+	0x12bd8		.L.str.58
+	0x12c08		.L.str.59
+	0x12c38		.L.str.60
+	0x12c70		.L.str.61
+	0x12ca0		.L.str.64
+	0x12cd8		.L.str.37
+	0x12d08		.L.str.77
+	0x12d18		.L.str.1.38
+	0x12d38		.L.str.2.39
+	0x12d50		.L.str.3.40
+	0x12d68		.L.str.4.41
+	0x12d70		.L.str.5.42
+	0x12d78		.L.str.6.43
+	0x12d80		.L.str.7.44
+	0x12da8		.L.str.8.45
+	0x12db0		.L.str.9.46
+	0x12dc0		.L.str.10.47
+	0x12de8		.L.str.11.48
+	0x12e08		.L.str.12.49
+	0x12e38		.L.str.13.50
+	0x12e48		.L.str.14.51
+	0x12e60		.L.str.15.52
+	0x12e80		.L.str.16.53
+	0x12e90		.L.str.17.54
+	0x12eb0		.L.str.18.55
+	0x12ed0		.L.str.19.56
+	0x12ed8		.L.str.20.57
+	0x12f00		.L.str.21.58
+	0x12f18		.L.str.22.59
+	0x12f28		.L.str.23.60
+	0x12f38		.L.str.24.61
+	0x12f58		.L.str.25.62
+	0x12f78		.L.str.26.63
+	0x12fb0		.L.str.27.64
+	0x12fb8		.L.str.28.65
+	0x12fc8		.L.str.29.66
+	0x12fe0		.L.str.30.67
+	0x12fe8		.L.str.31.68
+	0x13000		.L.str.32.69
+	0x13008		.L.str.33.70
+	0x13010		.L.str.34.71
+	0x13020		.L.str.35.72
+	0x13038		.L.str.36.73
+	0x13050		.L.str.37.74
+	0x13080		.L.str.38
+	0x130c0		.L.str.39
+	0x13110		.L.str.40
+	0x13150		.L.str.41
+	0x13168		.L.str.42.75
+	0x13178		.L.str.43
+	0x13198		.L.str.44
+	0x131a8		.L.str.45
+	0x131b8		.L.str.46
+	0x131d0		.L.str.47
+	0x131e8		.L.str.48
+	0x13200		.L.str.49
+	0x13210		.L.str.50
+	0x13248		.L.str.51
+	0x13278		.L.str.52
+	0x132b0		.L.str.53
+	0x132d0		.L.str.54
+	0x132d8		.L.str.55
+	0x13300		.L.str.56
+	0x13318		.L.str.57
+	0x13340		.L.str.58.76
+	0x13348		.L.str.59.77
+	0x13350		.L.str.60.78
+	0x13380		.L.str.61.79
+	0x13388		.L.str.62
+	0x133b8		.L.str.63
+	0x133d8		.L.str.64.80
+	0x133f0		.L.str.65
+	0x13400		.L.str.66
+	0x13440		.L.str.67
+	0x13448		.L.str.68
+	0x13460		.L.str.69
+	0x13468		.L.str.70
+	0x134a8		.L.str.71
+	0x134e0		.L.str.72
+	0x13520		.L.str.73
+	0x13558		.L.str.74
+	0x13578		.L.str.75
+	0x13588		.L.str.4.93
+	0x135a0		.L.str.6.95
+	0x135b8		.L.str.96
+	0x135d8		.L.str.1.97
+	0x135f0		.L.str.2.98
+	0x135f8		.L.str.6.99
+	0x13620		.L.str.100
+
+.eh_frame	0x13680	0x4c # Offset: 0x13680, LMA: 0x13680, Alignment: 0x20
+.eh_frame	0x136c8	0x4	/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/finiS.o	#SHT_PROGBITS,SHF_ALLOC,1
+	0x136c8		__EH_FRAME_END__
+
+.dynamic	0x14000	0xb0 # Offset: 0x14000, LMA: 0x14000, Alignment: 0x4
+
+.data.rel.ro	0x140b0	0x210 # Offset: 0x140b0, LMA: 0x140b0, Alignment: 0x8
+.data.rel.ro.methodArrays	0x140b0	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,8
+	0x140b0		methodArrays
+.data.rel.ro.conv3x3_slim	0x140c4	0x1c	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,4
+	0x140c4		conv3x3_slim
+.data.rel.ro.methods	0x140e0	0x8c	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,8
+	0x140e0		methods
+PADDING_ALIGNMENT	0x1416c	0x4	0x0
+.data.rel.ro.parameterArrays	0x14170	0x30	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,8
+	0x14170		parameterArrays
+.data.rel.ro.parameters	0x141a0	0x70	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,8
+	0x141a0		parameters
+.data.rel.ro	0x14210	0xb0	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,4
+
+.data	0x142c0	0x44 # Offset: 0x142c0, LMA: 0x142c0, Alignment: 0x4
+.data.conv3x3_skel_handle_invoke_qaic_version	0x142c0	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,4
+	0x142c0		conv3x3_skel_handle_invoke_qaic_version
+.data	0x142c4	0x40	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,4
+	0x142c4		Halide::Runtime::Internal::custom_malloc
+	0x142c8		Halide::Runtime::Internal::custom_free
+	0x142cc		Halide::Runtime::Internal::custom_malloc_tracing_alloc
+	0x142d0		Halide::Runtime::Internal::custom_malloc_tracing_failed_alloc
+	0x142d4		Halide::Runtime::Internal::custom_malloc_tracing_log_request
+	0x142d8		Halide::Runtime::Internal::custom_malloc_tracing_free
+	0x142dc		halide_qurt_default_thread_priority
+	0x142e0		Halide::Runtime::Internal::custom_do_task
+	0x142e4		Halide::Runtime::Internal::custom_do_loop_task
+	0x142e8		Halide::Runtime::Internal::custom_do_par_for
+	0x142ec		Halide::Runtime::Internal::custom_do_parallel_tasks
+	0x142f0		Halide::Runtime::Internal::custom_semaphore_init
+	0x142f4		Halide::Runtime::Internal::custom_semaphore_try_acquire
+	0x142f8		Halide::Runtime::Internal::custom_semaphore_release
+	0x142fc		Halide::Runtime::Internal::halide_reuse_device_allocations_flag
+	0x14300		Halide::Runtime::Internal::custom_can_use_target_features
+
+.ctors	0x14304	0x8 # Offset: 0x14304, LMA: 0x14304, Alignment: 0x4
+.ctors	0x14304	0x4	/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/initS.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,4
+	0x14304		__CTOR_LIST__
+.ctors	0x14308	0x4	/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/finiS.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,1
+	0x14308		__CTOR_END__
+
+.dtors	0x1430c	0x14 # Offset: 0x1430c, LMA: 0x1430c, Alignment: 0x4
+.dtors	0x1430c	0x8	/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/initS.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,4
+	0x1430c		__DTOR_LIST__
+.dtors	0x14314	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,4
+.dtors	0x1431c	0x4	/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/tools/HEXAGON_Tools/8.4.11/Tools/bin/../target/hexagon/lib/v68/G0/pic/finiS.o	#SHT_PROGBITS,SHF_ALLOC|SHF_WRITE,1
+	0x1431c		__DTOR_END__
+
+.got	0x14320	0xc0 # Offset: 0x14320, LMA: 0x14320, Alignment: 0x4
+*(.got ) #Rule 13, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+
+.got.plt	0x143e0	0x9c # Offset: 0x143e0, LMA: 0x143e0, Alignment: 0x8
+*(.got.plt ) #Rule 14, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+
+.bss	0x14480	0x34d8 # Offset: 0x1447c, LMA: 0x14480, Alignment: 0x8
+.bss	0x14480	0x34d8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_NOBITS,SHF_ALLOC|SHF_WRITE,8
+	0x14480		malloc_tracing
+	0x14488		Halide::Runtime::Internal::buf_is_used
+	0x144b0		Halide::Runtime::Internal::mem_buf
+	0x144d8		Halide::Runtime::Internal::Synchronization::table_storage
+	0x174d8		Halide::Runtime::Internal::work_queue
+	0x17910		Halide::Runtime::Internal::halide_gpu_device
+	0x17914		Halide::Runtime::Internal::halide_gpu_device_lock
+	0x17915		Halide::Runtime::Internal::halide_gpu_device_initialized
+	0x17918		Halide::Runtime::Internal::allocation_pools_lock
+	0x1791c		Halide::Runtime::Internal::device_allocation_pools
+	0x17920		Halide::Runtime::Internal::device_copy_mutex
+	0x17928		halide_error_mask
+	0x17930		Halide::Runtime::Internal::halide_cpu_features_initialized_lock
+	0x17934		Halide::Runtime::Internal::halide_cpu_features_initialized
+	0x17938		Halide::Runtime::Internal::halide_cpu_features_storage
+
+.debug_info	0x1447c	0x5541 # Offset: 0x1447c, Alignment: 0x1
+.debug_info	0x1447c	0x1240	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,,1
+.debug_info	0x156bc	0x966	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,,1
+.debug_info	0x16022	0x160	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,,1
+.debug_info	0x16182	0x392	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,,1
+.debug_info	0x16514	0x40c	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,,1
+.debug_info	0x16920	0x552	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,,1
+.debug_info	0x16e72	0x2b4b	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,,1
+
+.debug_str	0x199bd	0xcdb # Offset: 0x199bd, Alignment: 0x1
+*(.debug_str ) #Rule 1, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+.debug_str	0x199bd	0x3e	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x199fb	0x2c	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19a27	0x3d	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19a64	0x28	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19a8c	0x12	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19a9e	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19aa7	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ab0	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19abd	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ac6	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19aca	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ad6	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19adf	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19aea	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19af3	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19afb	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b03	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b10	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b18	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b22	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b29	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b34	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b3a	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b40	0x3	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b43	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b50	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b5a	0x3	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b5d	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b64	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b68	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b70	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b76	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b80	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b87	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b91	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19b99	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ba1	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ba6	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19bb0	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19bb8	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19bc3	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19bca	0xf	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19bd9	0x11	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19bea	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19bf7	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c01	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c0c	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c13	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c1e	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c26	0xe	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c34	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c3c	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c45	0xf	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c54	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c5d	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c66	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c6f	0x17	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c86	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c91	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19c9a	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ca7	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19cad	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19cb9	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ccd	0x16	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ce3	0x10	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19cf3	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19d0b	0x1a	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19d25	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19d39	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19d46	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19d50	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19d5b	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19d64	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19d6c	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19d77	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19d84	0x11	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19d95	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19d9a	0x10	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19daa	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19daf	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19db4	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19dbe	0x10	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19dce	0x12	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19de0	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19de7	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ded	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19df2	0x12	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e04	0xe	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e12	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e1a	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e1f	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e29	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e36	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e4a	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e52	0x10	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e62	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e6d	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e73	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e87	0x3	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e8a	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e91	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e98	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19e9f	0x10	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19eaf	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19eb5	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ebb	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ec2	0xf	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ed1	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ed6	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19eda	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19edf	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ee3	0x3	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ee6	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19eeb	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ef6	0x2	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ef8	0xe	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f06	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f0a	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f0e	0x3	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f11	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f18	0x12	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f2a	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f35	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f3c	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f42	0x10	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f52	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f5a	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f62	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f67	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f6f	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f76	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f80	0xf	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f8f	0xe	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19f9d	0xf	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19fac	0x3	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19faf	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19fb6	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19fc0	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19fc8	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19fcd	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19fd6	0xf	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19fe5	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19fea	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19fef	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x19ffc	0x1b	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a017	0x12	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a029	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a034	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a03e	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a044	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a04b	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a052	0x10	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a062	0x11	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a073	0x12	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a085	0x13	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a098	0x13	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a0ab	0x13	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a0be	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a0c5	0x15	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a0da	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a0e0	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a0e8	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a0ed	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a0fa	0xe	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a108	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a114	0xe	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a122	0x15	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a137	0x12	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a149	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a14d	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a154	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a159	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a15d	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a164	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a168	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a16f	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a176	0xa	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a180	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a186	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a18b	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a192	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a197	0x12	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a1a9	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a1b1	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a1b6	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a1be	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a1c9	0x2	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a1cb	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a1d6	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a1e3	0xe	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a1f1	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a1f6	0x1c	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a212	0x2	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a214	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a21a	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a21f	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a22c	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a235	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a240	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a247	0x11	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a258	0xe	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a266	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a272	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a27e	0xf	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a28d	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a29a	0xf	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a2a9	0x17	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a2c0	0x15	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a2d5	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a2e1	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a2ed	0xd	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a2fa	0x14	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a30e	0xc	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a31a	0xe	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a328	0x13	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a33b	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a340	0x1f	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a35f	0x1a	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a379	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a37e	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a384	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a389	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a38e	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a394	0xe	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a3a2	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a3ad	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a3b1	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a3b5	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a3bc	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a3c3	0x13	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a3d6	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a3de	0x10	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a3ee	0xb	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a3f9	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a402	0x7	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a409	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a411	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a41a	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a420	0xc	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a42c	0xd	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a439	0xd	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a446	0x4	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a44a	0xd	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a457	0x4	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a45b	0x16	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a471	0x11	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a482	0xf	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a491	0x4	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a495	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a49e	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a4a4	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a4a9	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a4af	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a4b4	0x1c	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a4d0	0x2	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a4d2	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a4d7	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a4dc	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a4e2	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a4e7	0x9	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a4f0	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a4f8	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a500	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a508	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a50d	0xf	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a51c	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a524	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a529	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a531	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a536	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a53e	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a543	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a548	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a54d	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a552	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a557	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a55c	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a564	0x11	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a575	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a57b	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a583	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a58b	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a590	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a598	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a5a0	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a5a5	0x16	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a5bb	0xf	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a5ca	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a5cf	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a5d7	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a5dd	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a5e5	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a5eb	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a5f0	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a5f5	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a5fd	0x16	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a613	0xf	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a622	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a627	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a62f	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a637	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a63c	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a644	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a64c	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a652	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a658	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a65d	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a662	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a667	0x5	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a66c	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a672	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a67a	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a682	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a68a	0x6	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.debug_str	0x1a690	0x8	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+
+.debug_loc	0x1a698	0x19a1 # Offset: 0x1a698, Alignment: 0x1
+*(.debug_loc ) #Rule 2, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+.debug_loc	0x1a698	0x451	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,,1
+.debug_loc	0x1aae9	0x457	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,,1
+.debug_loc	0x1af40	0xc4	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,,1
+.debug_loc	0x1b004	0x347	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,,1
+.debug_loc	0x1b34b	0x407	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,,1
+.debug_loc	0x1b752	0x8e7	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,,1
+
+.debug_abbrev	0x1c039	0x758 # Offset: 0x1c039, Alignment: 0x1
+*(.debug_abbrev ) #Rule 3, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+.debug_abbrev	0x1c039	0x1b6	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,,1
+.debug_abbrev	0x1c1ef	0x1e0	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,,1
+.debug_abbrev	0x1c3cf	0x10d	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,,1
+.debug_abbrev	0x1c4dc	0xdf	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,,1
+.debug_abbrev	0x1c5bb	0xd8	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,,1
+.debug_abbrev	0x1c693	0xd8	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,,1
+.debug_abbrev	0x1c76b	0x26	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,,1
+
+.debug_aranges	0x1c791	0x720 # Offset: 0x1c791, Alignment: 0x1
+*(.debug_aranges ) #Rule 4, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+.debug_aranges	0x1c791	0x70	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,,1
+.debug_aranges	0x1c801	0x48	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,,1
+.debug_aranges	0x1c849	0x20	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,,1
+.debug_aranges	0x1c869	0x20	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,,1
+.debug_aranges	0x1c889	0x20	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,,1
+.debug_aranges	0x1c8a9	0x20	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,,1
+.debug_aranges	0x1c8c9	0x5e8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,,1
+
+.debug_ranges	0x1ceb1	0xc38 # Offset: 0x1ceb1, Alignment: 0x1
+*(.debug_ranges ) #Rule 5, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+.debug_ranges	0x1ceb1	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,,1
+.debug_ranges	0x1cec9	0x48	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,,1
+.debug_ranges	0x1cf11	0x18	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,,1
+.debug_ranges	0x1cf29	0x18	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,,1
+.debug_ranges	0x1cf41	0xba8	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,,1
+
+.debug_macinfo	0x1dae9	0x6 # Offset: 0x1dae9, Alignment: 0x1
+*(.debug_macinfo ) #Rule 6, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+.debug_macinfo	0x1dae9	0x1	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,,1
+.debug_macinfo	0x1daea	0x1	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,,1
+.debug_macinfo	0x1daeb	0x1	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,,1
+.debug_macinfo	0x1daec	0x1	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,,1
+.debug_macinfo	0x1daed	0x1	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,,1
+.debug_macinfo	0x1daee	0x1	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,,1
+
+.comment	0x1daef	0xc7 # Offset: 0x1daef, Alignment: 0x1
+*(.comment ) #Rule 7, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+.comment	0x1daef	0x1	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.comment	0x1daf0	0x3e	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.comment	0x1db2e	0x2e	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.comment	0x1db5c	0x2e	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+.comment	0x1db8a	0x2c	Linker Version	#SHT_PROGBITS,SHF_MERGE|SHF_STRINGS,1
+
+.note.GNU-stack	0x1dbb6	0x0 # Offset: 0x1dbb6, Alignment: 0x1
+*(.note.GNU-stack ) #Rule 8, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+
+.debug_frame	0x1dbb8	0x20c # Offset: 0x1dbb8, Alignment: 0x4
+*(.debug_frame ) #Rule 9, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+.debug_frame	0x1dbb8	0x30	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,,4
+.debug_frame	0x1dbe8	0xdc	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,,4
+.debug_frame	0x1dcc4	0x64	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,,4
+.debug_frame	0x1dd28	0x30	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,,4
+.debug_frame	0x1dd58	0x30	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,,4
+.debug_frame	0x1dd88	0x3c	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,,4
+
+.debug_line	0x1ddc4	0x6761 # Offset: 0x1ddc4, Alignment: 0x1
+*(.debug_line ) #Rule 10, Internal-LinkerScript (Implicit rule inserted by Linker) [0:0]
+.debug_line	0x1ddc4	0x303	hexagon_ReleaseG_toolv84_v68/conv3x3_skel.o	#SHT_PROGBITS,,1
+.debug_line	0x1e0c7	0x36b	hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o	#SHT_PROGBITS,,1
+.debug_line	0x1e432	0x12b	hexagon_ReleaseG_toolv84_v68/print.o	#SHT_PROGBITS,,1
+.debug_line	0x1e55d	0x16d	hexagon_ReleaseG_toolv84_v68/conv3x3_per1row.o	#SHT_PROGBITS,,1
+.debug_line	0x1e6ca	0x191	hexagon_ReleaseG_toolv84_v68/conv3x3_per2row.o	#SHT_PROGBITS,,1
+.debug_line	0x1e85b	0x18a	hexagon_ReleaseG_toolv84_v68/conv3x3_per4row.o	#SHT_PROGBITS,,1
+.debug_line	0x1e9e5	0x5b40	hexagon_ReleaseG_toolv84_v68/conv3x3_halide.o	#SHT_PROGBITS,,1
+
+.shstrtab	0x24525	0x136 # Offset: 0x24525, Alignment: 0x1
+
+.symtab	0x2465c	0x1d80 # Offset: 0x2465c, Alignment: 0x4
+
+.strtab	0x263dc	0x2dab # Offset: 0x263dc, Alignment: 0x1

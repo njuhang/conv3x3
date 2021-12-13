@@ -1,0 +1,20 @@
+src/conv3x3_test.c:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/remote.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/utils/examples/os_defines.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/stddef/AEEStdErr.h:
+android_ReleaseG_aarch64/conv3x3.h:
+src/conv3x3_test.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/ipc/fastrpc/rpcmem/prebuilt/android_aarch64/rpcmem.h:
+src/ion_allocation.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/remote_default.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/stddef/AEEStdDef.h:
+android_ReleaseG_aarch64/conv3x3_test.o: src/conv3x3_test.c
+android_ReleaseG_aarch64/conv3x3_test.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/remote.h
+android_ReleaseG_aarch64/conv3x3_test.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/utils/examples/os_defines.h
+android_ReleaseG_aarch64/conv3x3_test.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/stddef/AEEStdErr.h
+android_ReleaseG_aarch64/conv3x3_test.o: android_ReleaseG_aarch64/conv3x3.h
+android_ReleaseG_aarch64/conv3x3_test.o: src/conv3x3_test.h
+android_ReleaseG_aarch64/conv3x3_test.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/ipc/fastrpc/rpcmem/prebuilt/android_aarch64/rpcmem.h
+android_ReleaseG_aarch64/conv3x3_test.o: src/ion_allocation.h
+android_ReleaseG_aarch64/conv3x3_test.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/remote_default.h
+android_ReleaseG_aarch64/conv3x3_test.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/stddef/AEEStdDef.h

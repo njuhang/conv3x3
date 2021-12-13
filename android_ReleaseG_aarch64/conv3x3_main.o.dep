@@ -1,0 +1,18 @@
+src/conv3x3_main.c:
+src/conv3x3_test.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/ipc/fastrpc/rpcmem/prebuilt/android_aarch64/rpcmem.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/remote.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/utils/examples/dsp_capabilities_utils.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/utils/examples/os_defines.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/stddef/AEEStdDef.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/remote_default.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/stddef/AEEStdErr.h:
+android_ReleaseG_aarch64/conv3x3_main.o: src/conv3x3_main.c
+android_ReleaseG_aarch64/conv3x3_main.o: src/conv3x3_test.h
+android_ReleaseG_aarch64/conv3x3_main.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/ipc/fastrpc/rpcmem/prebuilt/android_aarch64/rpcmem.h
+android_ReleaseG_aarch64/conv3x3_main.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/remote.h
+android_ReleaseG_aarch64/conv3x3_main.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/utils/examples/dsp_capabilities_utils.h
+android_ReleaseG_aarch64/conv3x3_main.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/utils/examples/os_defines.h
+android_ReleaseG_aarch64/conv3x3_main.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/stddef/AEEStdDef.h
+android_ReleaseG_aarch64/conv3x3_main.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/remote_default.h
+android_ReleaseG_aarch64/conv3x3_main.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/stddef/AEEStdErr.h

@@ -1,0 +1,31 @@
+LIB_DSPRPC = libadsprpc
+
+# binary names
+DLL_NAME=libconv3x3
+EXE_NAME=conv3x3
+
+UTILS_DIR=$(HEXAGON_SDK_ROOT)/utils/examples
+
+# stub library
+BUILD_DLLS += $(DLL_NAME)
+$(DLL_NAME)_QAICIDLS += inc/conv3x3
+$(DLL_NAME)_C_SRCS += $(OBJ_DIR)/conv3x3_stub
+$(DLL_NAME)_DLLS += $(LIB_DSPRPC)
+
+# stand-alone executable
+BUILD_EXES += $(EXE_NAME)
+$(EXE_NAME)_QAICIDLS += inc/conv3x3
+$(EXE_NAME)_C_SRCS += src/conv3x3_main 
+$(EXE_NAME)_C_SRCS += src/conv3x3_test $(UTILS_DIR)/dsp_capabilities_utils src/ion_allocation
+$(EXE_NAME)_DLLS += $(DLL_NAME) $(LIB_DSPRPC)
+$(EXE_NAME)_DEFINES += VERIFY_PRINT_ERROR
+
+# copy final build products to the ship directory
+BUILD_COPIES = \
+   $(DLLS) \
+   $(EXES) \
+   $(LIBS) \
+   $(SHIP_DIR)/ ;
+
+$(EXE_NAME)_LD_FLAGS += -llog -ldl
+$(EXE_NAME)_LIBS += rpcmem

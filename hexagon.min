@@ -1,0 +1,29 @@
+#Set NO_QURT_INC to 1 to disable qurt libraries/headers inclusion
+NO_QURT_INC = 1
+
+# This builds the dynamic library
+BUILD_DLLS += libconv3x3_skel
+libconv3x3_skel_QAICIDLS += inc/conv3x3
+libconv3x3_skel_C_SRCS += $(OBJ_DIR)/conv3x3_skel
+libconv3x3_skel.C_SRCS += src/conv3x3_imp.c
+libconv3x3_skel.C_SRCS += src/print.c
+libconv3x3_skel.C_SRCS += src/conv3x3_per1row.c
+libconv3x3_skel.C_SRCS += src/conv3x3_per2row.c
+libconv3x3_skel.C_SRCS += src/conv3x3_per4row.c
+#libconv3x3_skel.CPP_SRCS += src/conv3x3_halide.halide_generated.cpp
+libconv3x3_skel.ASM_SRCS += src/conv3x3_halide.S
+
+#libconv3x3_skel.ASM_SRCS += src/conv3x3_asm.S
+
+# quality test
+#BUILD_QEXES += conv3x3_q
+#BUILD_LIBS += libconv3x3_skel
+#conv3x3_q_C_SRCS += src/conv3x3_test_main src/conv3x3_test_q
+#conv3x3_q_LIBS += rtld rpcmem test_util atomic libconv3x3_skel
+
+# copy final build products to the ship directory
+BUILD_COPIES += \
+   $(DLLS) \
+   $(EXES) \
+   $(LIBS) \
+   $(SHIP_DIR)/ ;

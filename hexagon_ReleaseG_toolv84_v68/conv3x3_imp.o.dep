@@ -1,0 +1,26 @@
+src/conv3x3_imp.c:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/HAP_farf.h:
+hexagon_ReleaseG_toolv84_v68/conv3x3.h:
+src/conv3x3_per1row.h:
+src/conv3x3_per2row.h:
+src/conv3x3_per4row.h:
+src/conv3x3_halide.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/HAP_perf.h:
+src/q6cache.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/stddef/AEEStdDef.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/HAP_debug.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/remote.h:
+/home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/remote_default.h:
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: src/conv3x3_imp.c
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/HAP_farf.h
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: hexagon_ReleaseG_toolv84_v68/conv3x3.h
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: src/conv3x3_per1row.h
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: src/conv3x3_per2row.h
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: src/conv3x3_per4row.h
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: src/conv3x3_halide.h
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/HAP_perf.h
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: src/q6cache.h
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/stddef/AEEStdDef.h
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/HAP_debug.h
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/remote.h
+hexagon_ReleaseG_toolv84_v68/conv3x3_imp.o: /home/lvhang/hexagon4.3/Hexagon_SDK/4.3.0.0/incs/remote_default.h
